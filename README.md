@@ -48,3 +48,43 @@ Es importante tener en cuenta nuestro time y space complexity, ya que esto es de
 ## 8. ¿Podemos optimizar nuestra solución?
 
 Siempre buscar optimizaciones que podamos hacerle a nuestro código.
+
+
+# Problemas
+
+## Two Sum - Arrays
+
+Dado un arreglo de enteros, retornar los índices de los 2 números que sumados den el resultado enviado como parámetro.
+
+### Restricciones
+- Todos los números son positivos.
+- No hay duplicados.
+- No siempre habrá una solución disponible.
+- Si no hay solución retornar null.
+- Sólo habrá 1 par de números que sumados den el resultado.
+
+### Solución
+Lo más sencillo sería pensar en hacer una solución con 2 ciclos anidados, es decir con una complejidad de tiempo de $O(n^2)$, pero se podría optimizar haciendo uso de otra estructura de dato como el Hash Table, y así recorrer sólo una vez el arreglo, e ir verificando si $nums[i] - target$ está en el Hash Table para retornar los índices, si no está se guarda en el Hash Table $nums[i] - target = i$.
+
+## Container with most water - Arrays
+
+Dado un arreglo de positivos enteros donde cada entero representa la altura de una línea vertical en un contenedor. Encontrar 2 líneas que juntas con la distancia entre ellas en el eje X formen un contenedor que contendría la mayor cantidad de agua. Retornar el área del agua que podría contener.
+
+### Restricciones
+- El grosor de las líneas no afectan el área.
+- No cuentan las líneas iniciales del gráfico.
+- Líneas dentro del contenedor no afectan el área.
+
+### Solución
+Como el problema anterior la primera solución que podríamos pensar sería comparar cada elemento con los demás y verificar el área mayor, sin embargo podemos hacer uso de 2 punteros, para verificar las combinaciones, donde en cada iteración (el ciclo se rompe cuando $p_1 < p_2$) se calcula el área de los números y guardamos el valor máximo entre el máximo área que habíamos calculado y el actual área en una variable para seguir comparando en cada iteración, e incrementamos $p_1$ si el valor en dicha posición es menor o igual que el valor en $p_2$, caso contrario decrementamos $p_2$.
+
+## Trapping Rainwater - Arrays
+
+Dado un arreglo de enteros representando la elevación de un mapa donde el ancho de cada barra es 1, retornar cuanta agua de lluvia puede ser atrapada.
+
+### Restricciones
+- Los extremos del gráfico (líneas de ejes) no cuentan.
+- Todos los números son positivos.
+
+### Solución
+La solución de fuerza bruta consistió en recorrer la cada posición, y por cada posición verificar sus valores al lado izquierdo y al lado derecho para hacer los cálculos de los valores, sin embargo se volvió a usar el doble puntero para optimizar nuestro código, validando los valores máximos de cada lado, y dependiendo de estos valores máximos sumamos el valor al total o actualizamos dicho valor para ambos extremos y así calcular las áreas correspondientes.
