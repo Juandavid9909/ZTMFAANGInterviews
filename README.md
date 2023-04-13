@@ -88,3 +88,16 @@ Dado un arreglo de enteros representando la elevación de un mapa donde el ancho
 
 ### Solución
 La solución de fuerza bruta consistió en recorrer la cada posición, y por cada posición verificar sus valores al lado izquierdo y al lado derecho para hacer los cálculos de los valores, sin embargo se volvió a usar el doble puntero para optimizar nuestro código, validando los valores máximos de cada lado, y dependiendo de estos valores máximos sumamos el valor al total o actualizamos dicho valor para ambos extremos y así calcular las áreas correspondientes.
+
+## Type Out Strings - Strings
+
+Dados 2 strings S y T, retornar si estos son iguales cuando son escritos. Cualquier "#" que aparezca en la cadena cuenta como un retroceso.
+
+### Restricciones
+- Si hay 2 "#" se eliminan los dos valores anteriores al primer "#".
+- Si no hay nada antes del "#" no se elimina nada.
+- 2 strings vacíos se consideran iguales.
+- La capitalización de las letras sí importa, es decir que "a" no es igual a "A".
+
+### Solución
+En este problema se puede hacer uso de la regla de los 2 punteros para comparar los strings directamente sin hacer uso de memoria adicional, iniciando la posición de cada puntero en el final de cada string, e ir comparando en cada iteración si alguno tiene un "#" en dicha posición para ir cambiando de posición omitiendo la cantidad de caracteres necesarios y si en alguna posición son distintos se retorna falso, caso contrario finalizada la iteración se retorna true.
