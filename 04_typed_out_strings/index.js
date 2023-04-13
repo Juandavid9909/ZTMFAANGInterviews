@@ -88,9 +88,3 @@ const backspaceCompare = (S, T) => {
 
     return true;
 }
-
-console.log(backspaceCompare("ab#z", "az#z"));
-console.log(backspaceCompare("abc#d", "acc#c"));
-console.log(backspaceCompare("x#y#z#", "a#"));
-console.log(backspaceCompare("a###b", "b"));
-console.log(backspaceCompare("Ab#z", "ab#z"));
