@@ -101,3 +101,13 @@ Dados 2 strings S y T, retornar si estos son iguales cuando son escritos. Cualqu
 
 ### Solución
 En este problema se puede hacer uso de la regla de los 2 punteros para comparar los strings directamente sin hacer uso de memoria adicional, iniciando la posición de cada puntero en el final de cada string, e ir comparando en cada iteración si alguno tiene un "#" en dicha posición para ir cambiando de posición omitiendo la cantidad de caracteres necesarios y si en alguna posición son distintos se retorna falso, caso contrario finalizada la iteración se retorna true.
+
+## Longest substring without repeating characters - Strings
+
+Dado un string, encontrar la longitud del substring más largo sin repetir caracteres.
+
+### Restricciones
+- El substring es contiguo, es decir que buscamos un substring seguido, no una subsecuencia (la subsecuencia permite obviar algunas letras mientras que el substring no).
+
+### Solución
+Aquí se tuvo en cuenta otra técnica para recorrer arreglos/strings, y es la técnica Sliding Window Technique, esto nos permite hacer algo similar a la técnica del os 2 punteros, y es tener dos variables que apunten a índices e irlos cambiando convenientemente, en este caso se cambia el rightIndex en cada iteración y si se encuentra la letra en un Hash Table se actualiza el leftIndex.
