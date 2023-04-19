@@ -111,3 +111,13 @@ Dado un string, encontrar la longitud del substring más largo sin repetir carac
 
 ### Solución
 Aquí se tuvo en cuenta otra técnica para recorrer arreglos/strings, y es la técnica Sliding Window Technique, esto nos permite hacer algo similar a la técnica del os 2 punteros, y es tener dos variables que apunten a índices e irlos cambiando convenientemente, en este caso se cambia el rightIndex en cada iteración y si se encuentra la letra en un Hash Table se actualiza el leftIndex.
+
+## Valid Palindrome & Almost Palindrome - Strings
+
+Dado un string, determinar si es un palíndromo (o casi uno), considerando sólo caracteres alfanuméricos e ignorando el case sensitivity.
+
+### Restricciones
+- Retornar true si el string es ya un palíndromo.
+
+### Solución
+Aquí también se usa la técnica del doble puntero iniciando ambos en los extremos del string, y se valida cada posición left con la right para determinar si son iguales o no los valores, para validar si es casi un palíndromo podemos crear una función auxiliar para validar si eliminando el carácter de la izquierda o la derecha seguiría siendo un palíndromo.
