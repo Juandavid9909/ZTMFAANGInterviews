@@ -121,3 +121,13 @@ Dado un string, determinar si es un palíndromo (o casi uno), considerando sólo
 
 ### Solución
 Aquí también se usa la técnica del doble puntero iniciando ambos en los extremos del string, y se valida cada posición left con la right para determinar si son iguales o no los valores, para validar si es casi un palíndromo podemos crear una función auxiliar para validar si eliminando el carácter de la izquierda o la derecha seguiría siendo un palíndromo.
+
+## Reverse a Linked List - Linked Lists
+
+Data una lista enlazada, retornar esta al revés.
+
+### Restricciones
+- Retornar null o el valor del nodo si hay 0 o 1 nodo en la lista enlazada.
+
+### Solución
+Para este problema podemos usar una variable auxiliar y cada que recorramos los nodos ir anexando estos valores a nuestra lista auxiliar en el valor Next para retornar la lista al revés.
