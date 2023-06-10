@@ -26,7 +26,7 @@ const reverseBetween = (head, m, n) => {
     let newList = null;
     let tail = currentNode;
 
-    while (currentPos >= m && currentPost <= n) {
+    while (currentPos >= m && currentPos <= n) {
         const next = currentNode.next;
 
         currentNode.next = newList;
