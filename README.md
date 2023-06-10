@@ -131,3 +131,11 @@ Data una lista enlazada, retornar esta al revés.
 
 ### Solución
 Para este problema podemos usar una variable auxiliar y cada que recorramos los nodos ir anexando estos valores a nuestra lista auxiliar en el valor Next para retornar la lista al revés.
+
+## M, N Reversals - Linked Lists
+
+Dada una lista enlazada y dos números ($n$ y $m$), retornar la lista con sólo en el rango de las posiciones n y m al revés.
+
+### Restricciones
+- Siempre asumir que $1 \leq m \leq n \leq length$.
+- Puede darse el caso en el que $m = 1$ y $n = length$.
