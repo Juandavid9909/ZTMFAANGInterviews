@@ -139,3 +139,6 @@ Dada una lista enlazada y dos números ($n$ y $m$), retornar la lista con sólo 
 ### Restricciones
 - Siempre asumir que $1 \leq m \leq n \leq length$.
 - Puede darse el caso en el que $m = 1$ y $n = length$.
+
+### Solución
+Para solucionar este problema es necesario que guardamos algunos datos que son fundamentales para armar correctamente la lista enlazada, estos datos son los valores antes y después de el rango donde se va a revertir el orden de la lista, como la raíz y cola de la lista revertida.

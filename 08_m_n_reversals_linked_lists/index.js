@@ -9,3 +9,35 @@
 // linkedList = 1->2->3->4->5->null  m = 1  n = 5    5->4->3->2->1->null
 // linkedList = 5->null              m = 1  n = 1    5->null
 // linkedList = null                 m = 0  n = 0    null
+
+// O(n) - O(1)
+const reverseBetween = (head, m, n) => {
+    let currentPos = 1;
+    let currentNode = head;
+    let start = head;
+
+    while (currentPos < m) {
+        start = currentNode;
+        currentNode = currentNode.next;
+
+        currentPos++;
+    }
+
+    let newList = null;
+    let tail = currentNode;
+
+    while (currentPos >= m && currentPost <= n) {
+        const next = currentNode.next;
+
+        currentNode.next = newList;
+        newList = currentNode;
+        currentNode = next;
+
+        currentPos++;
+    }
+
+    start.next = newList;
+    tail.next = currentNode;
+
+    return m > 1 ? head : newList;
+}
