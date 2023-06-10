@@ -11,3 +11,37 @@
 //                  |
 //                  10-11
 // result = 1-2-7-8-10-11-9-3-4-5-12-13-6-null
+
+// O(n) - O(1)
+const flatten = (head) => {
+    if (!head) {
+        return head;
+    }
+
+    let currentNode = head;
+
+    while (currentNode) {
+        if (currentNode.child === null) {
+            currentNode = currentNode.next;
+        } else {
+            let tail = currentNode.child;
+
+            while (tail.next) {
+                tail = tail.next;
+            }
+
+            tail.next = currentNode.next;
+
+            if (tail.next) {
+                tail.next.prev = tail;
+            }
+
+            currentNode.next = currentNode.child;
+            currentNode.next.prev = currentNode;
+
+            currentNode.child = null;
+        }
+    }
+
+    return head;
+}

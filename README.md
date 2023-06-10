@@ -142,3 +142,14 @@ Dada una lista enlazada y dos números ($n$ y $m$), retornar la lista con sólo 
 
 ### Solución
 Para solucionar este problema es necesario que guardamos algunos datos que son fundamentales para armar correctamente la lista enlazada, estos datos son los valores antes y después de el rango donde se va a revertir el orden de la lista, como la raíz y cola de la lista revertida.
+
+## Merge Multi-Level Doubly Linked List - Linked Lists
+
+Dada una lista doblemente enlazada, cada nodo también puede tener una propiedad hija que apunta a una lista doblemente enlazada separada. Estas listas hijas también pueden tener una o más listas doblemente enlazadas hijas, y así sucesivamente. Se debe retornar una lista doblemente enlazada de un nivel que contenga la lista padre con todas sus listas hijas en la secuencia correspondiente.
+
+### Restricciones
+- Una lista doblemente enlazada puede tener múltiples hijos dispersos en sus nodos.
+- Cuando se junten los hijos de un nodo de la lista la propiedad child se establece en `null`.
+
+### Solución
+Es importante tener en cuenta los nodos extremos que van a quedar conectados a la nueva sublista, hacer una iteración para los hijos y conectar correctamente cada uno de estos nodos.
