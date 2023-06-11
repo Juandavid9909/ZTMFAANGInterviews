@@ -59,6 +59,4 @@ const findCycleFloyd = (head) => {
     }
 
     return p1;
-
-    return true;
 }
