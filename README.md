@@ -162,3 +162,13 @@ Dada una lista enlazada encontrar si esta lista tiene ciclos en ella.
 En primera instancia la solución de fuerza "bruta" entre comillas tenía una complejidad de tiempo $O(n)$ y una complejidad espacial igual, esto es poco óptimo en cuando a la complejidad espacial porque estamos guardando todos los valores en un `Set` para luego poder compararlos con el item que estamos recorriendo. Luego se encontró que la solución óptima era aplicar el algoritmo Floyd's Tortoise and Hare el cuál consiste en tener 2 punteros, uno avanza de uno en uno mientras que el otro avanza de 2 en 2, si en la lista hay un ciclo en algún punto se encontrarán los 2 punteros y aquí es donde diremos que sí hay un ciclo y retornaremos `true`. A continuación una representación del algoritmo:
 
 ![Floyd's Tortoise and Hare Algorithm](https://icelam.github.io/data-structures-and-algorithms/leetcode/202-happy-number/images/fcf-5.jpg)
+
+## Valid Parentheses - Stacks
+
+Dado un string que contiene sólo paréntesis, determinar si es válido. El string es válido si todos los paréntesis se cierran.
+
+### Restricciones
+- Si la entrada es un string vacío se retorna que es válido.
+
+### Solución
+Es importante saber identificar en qué casos conviene usar las pilas, este es uno de ellos ya que necesitamos ir agregando cada inicio de paréntesis e ir eliminando los últimos, para ello podemos tener un Hash Map que nos indique en cada paréntesis su cierre correspondiente y comparar adecuadamente los valores para retornar   `false` o `true`.
