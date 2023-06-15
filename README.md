@@ -186,3 +186,17 @@ Un string es considerado válido si está vacío o si hay paréntesis y cada uno
 
 ### Solución
 Podemos hacer uso de los métodos de los arreglos y strings para convertir nuestro string en un arreglo y poder iterar cara letra independientemente, y alterar dicha posición del arreglo convenientemente, por ejemplo si es una apertura de paréntesis guardar el index en una pila que usaremos más adelante, si hay un cierre de paréntesis y ya hay datos en nuestra pila podemos borrar el último elemento insertado en esta, caso contrario si es un cierre de paréntesis pero no hay ningún dato registrado directamente asignamos el valor de "" al arreglo en dicha posición y por último hacemos este último proceso para los índices que quedaron pendientes en nuestra pila y así retornar el arreglo como string.
+
+## Queue with stacks - Stacks
+
+Implementar una clase Queue usando pilas. los métodos que se deben implementar son:
+- **enqueue:** Anexar un valor al final de la cola.
+- **dequeue:** Eliminar el valor al inicio de la cola.
+- **peek:** Retornar el valor al inicio de la cola.
+- **empty:** Retornar un booleano que nos indique si la cola está vacía o no.
+
+###  Restricciones
+- No es necesario que la cola con pilas tenga la misma complejidad de tiempo y espacial que una cola en sí (recordemos que la complejidad en las operaciones enqueue y dequeue es de $O(n)$), pero debe tener la complejidad más óptima posible.
+
+### Solución
+Podemos usar 2 pilas, en una hacer todos los enqueue y en otra controlar los dequeue, para los pop recorremos la pila que tiene los enqueue y hacemos pop a todos los elementos mientras hacemos push a la de pops. con el método peek podemos hacer lo mismo con la lista de pops y retornar el último elemento de la pila, y con el empty sólo comparar la longitud de ambas pilas para saber si ambas están vacías.
