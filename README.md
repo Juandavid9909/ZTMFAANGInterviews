@@ -172,3 +172,17 @@ Dado un string que contiene sólo paréntesis, determinar si es válido. El stri
 
 ### Solución
 Es importante saber identificar en qué casos conviene usar las pilas, este es uno de ellos ya que necesitamos ir agregando cada inicio de paréntesis e ir eliminando los últimos, para ello podemos tener un Hash Map que nos indique en cada paréntesis su cierre correspondiente y comparar adecuadamente los valores para retornar   `false` o `true`.
+
+## Minimum brackets to remove - Stacks
+
+Dado un string que sólo contiene paréntesis "(" y ")" y letras en minúscula, remover la mínima cantidad de paréntesis para que el string sea válido.
+
+Un string es considerado válido si está vacío o si hay paréntesis y cada uno de ellos tiene su respectivo cierre.
+
+### Restricciones
+- Nuestro algoritmo debe retornar un string con la cantidad válida de aperturas y cierres de paréntesis.
+- El string de entrada no tendrá espacios en blanco, sólo caracteres y aperturas y cierres de paréntesis.
+- Si el string de entrada no contiene ni aperturas ni cierres de paréntesis el string es directamente válido, por lo que no tenemos que manipularlo.
+
+### Solución
+Podemos hacer uso de los métodos de los arreglos y strings para convertir nuestro string en un arreglo y poder iterar cara letra independientemente, y alterar dicha posición del arreglo convenientemente, por ejemplo si es una apertura de paréntesis guardar el index en una pila que usaremos más adelante, si hay un cierre de paréntesis y ya hay datos en nuestra pila podemos borrar el último elemento insertado en esta, caso contrario si es un cierre de paréntesis pero no hay ningún dato registrado directamente asignamos el valor de "" al arreglo en dicha posición y por último hacemos este último proceso para los índices que quedaron pendientes en nuestra pila y así retornar el arreglo como string.
