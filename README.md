@@ -200,3 +200,40 @@ Implementar una clase Queue usando pilas. los métodos que se deben implementar 
 
 ### Solución
 Podemos usar 2 pilas, en una hacer todos los enqueue y en otra controlar los dequeue, para los pop recorremos la pila que tiene los enqueue y hacemos pop a todos los elementos mientras hacemos push a la de pops. con el método peek podemos hacer lo mismo con la lista de pops y retornar el último elemento de la pila, y con el empty sólo comparar la longitud de ambas pilas para saber si ambas están vacías.
+
+## Kth largest element - Recursion
+
+### Tail Recursion
+La recursividad normal tiene una complejidad espacial de $O(n)$, mientras que Tail Recursion tiene una complejidad espacial de $O(1)$.
+
+**Ejemplos:**
+
+- Recursividad normal.
+```
+function recFactorial(x) {
+	if(x <= 1) {
+		return 1;
+	}
+	
+	return x * recFactorial(x - 1);
+}
+```
+
+- Tail recursion.
+```
+function tailFactorial(x, totalSoFar = 1) {
+	if(x === 0) {
+		return totalSoFar;
+	}
+
+	return tailFactorial(x - 1, totalSoFar * x);
+}
+```
+
+Dado un arreglo no ordenado, retornar el kth elemento más grande. Es el kth elemento más grande en orden, no el kth elemento distinto.
+
+### Restricciones
+- Siempre va a haber una respuesta disponible.
+
+### Solución
+Podemos usar el algoritmo Quick Sort para ordenar el arreglo, una vez hecho esto simplemente retornamos el arreglo en la posición `length - k` que fue enviada como parámetro. Aunque es una buena solución esta no es la más óptima, para obtener la solución más óptima debemos hacer uso del algoritmo Quick Select, el cual tiene el mismo funcionamiento que Quick Sort pero aquí no operaremos en los elementos que no nos interesan (usando el index que deseamos encontrar).
